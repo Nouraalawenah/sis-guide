@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>دليلك لاستخدام نظام الـ SIS - كلية الأعمال</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FBF9F5; --ink:#1E293B; --muted:#64748B;
+  --sky:#0284C7; --sky-dark:#075985; --sky-soft:#E0F2FE;
+  --card:rgba(255,255,255,.92); --line:#E7E2D8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.9;font-size:17px}
+a{color:var(--sky)}
+
+/* Header */
+header{background:linear-gradient(135deg,var(--sky-dark),var(--sky));color:#fff;padding:0}
+.hero{max-width:1100px;margin:auto;display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center;padding:40px 20px}
+.hero h1{font-size:clamp(1.7rem,4.2vw,2.8rem);line-height:1.4;font-weight:800}
+.hero p{margin-top:12px;opacity:.92;max-width:46ch}
+.hero-img{aspect-ratio:16/10;border-radius:18px;overflow:hidden;border:4px solid rgba(255,255,255,.35);box-shadow:0 12px 30px rgba(0,0,0,.25);background:rgba(255,255,255,.15) center/cover;display:flex;align-items:center;justify-content:center;font-weight:700;text-align:center;padding:10px}
+.hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+
+main{max-width:1100px;margin:auto;padding:24px 20px 50px;display:grid;gap:22px}
+.note{background:#fff;border-right:5px solid var(--sky);border-radius:12px;padding:14px 18px;box-shadow:0 2px 10px rgba(2,132,199,.08)}
+
+/* Step cards */
+.step{background:var(--card);border:1px solid var(--line);border-radius:18px;box-shadow:0 4px 18px rgba(30,41,59,.07);padding:24px;display:grid;grid-template-columns:1fr 280px;gap:26px;align-items:start;scroll-margin-top:16px}
+.step:nth-of-type(even){grid-template-columns:280px 1fr}
+.step:nth-of-type(even) .shot{order:-1}
+.badge{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--sky);color:#fff;font-weight:800;margin-bottom:8px}
+.step h2{color:var(--sky);font-size:1.4rem;line-height:1.5;margin-bottom:6px}
+.step ul{padding-right:20px;margin-top:8px}
+.step li{margin-bottom:4px}
+.tip{margin-top:12px;background:var(--sky-soft);color:var(--sky-dark);border-radius:10px;padding:8px 14px;font-size:.95rem}
+.shot{margin:0;text-align:center}
+.shot img{width:100%;max-height:520px;object-fit:cover;object-position:top;border-radius:12px;border:1px solid var(--line);box-shadow:0 6px 16px rgba(0,0,0,.12);cursor:zoom-in;display:block;background:#eee}
+.shot figcaption{font-size:.82rem;color:var(--muted);margin-top:6px}
+.landscape .shot img{max-height:none;object-fit:contain}
+
+footer{text-align:center;color:var(--muted);font-size:.9rem;padding:26px 20px 40px;border-top:1px solid var(--line)}
+
+/* Lightbox */
+#lb{position:fixed;inset:0;background:rgba(15,23,42,.88);display:none;align-items:center;justify-content:center;padding:16px;z-index:50;cursor:zoom-out}
+#lb.open{display:flex}
+#lb img{max-width:100%;max-height:100%;border-radius:10px}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;padding:28px 16px}
+  .step,.step:nth-of-type(even){grid-template-columns:1fr;padding:18px}
+  .step:nth-of-type(even) .shot{order:0}
+  .shot img{max-height:420px;max-width:320px;margin:auto}
+  .landscape .shot img{max-width:100%}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hero">
+    <div>
+      <h1>دليلك لاستخدام نظام الـ SIS<br>كلية الأعمال – جامعة اليرموك</h1>
+      <p>شرح مبسّط بالصور لأهم خدمات نظام معلومات الطلبة: من تسجيل الدخول إلى متابعة الخطة الدراسية والمواد المسجلة.</p>
+    </div>
+    <!-- ضع صورة كلية الأعمال باسم business.jpg داخل مجلد images -->
+    <div class="hero-img">
+      <img src="images/business.jpg" alt="كلية الأعمال - جامعة اليرموك" onerror="this.remove();this.parentNode.textContent='كلية الأعمال'">
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="note">الرابط الرسمي للنظام: <a href="https://sis.yu.edu.jo/ords" target="_blank" rel="noopener">sis.yu.edu.jo/ords</a>. اضغط على أي صورة لتكبيرها.</div>
+
+  <article class="step" id="s1">
+    <div>
+      <span class="badge">1</span>
+      <h2>تسجيل الدخول إلى النظام</h2>
+      <ul>
+        <li>افتح الرابط من المتصفح، ستظهر صفحة «نظام معلومات الطلبة».</li>
+        <li>اكتب رقمك الجامعي في خانة اسم المستخدم، ثم كلمة المرور.</li>
+        <li>فعّل «الاحتفاظ باسم المستخدم» إن أردت أن يتذكر المتصفح رقمك.</li>
+        <li>اضغط «تسجيل الدخول». إذا نسيت كلمة المرور استخدم رابط «نسيت كلمة المرور».</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="images/sis_1.jpg" alt="شاشة تسجيل الدخول" loading="lazy"><figcaption>شاشة تسجيل الدخول</figcaption></figure>
+  </article>
+
+  <article class="step" id="s2">
+    <div>
+      <span class="badge">2</span>
+      <h2>قائمة الاشعارات</h2>
+      <ul>
+        <li>أول صفحة تظهر بعد الدخول هي «قائمة الاشعارات» مع تاريخ ووقت كل إشعار.</li>
+        <li>تصلك هنا تنبيهات النظام، مثل انتهاء صلاحية كلمة المرور.</li>
+      </ul>
+      <div class="tip">إذا ظهر إشعار بانتهاء صلاحية كلمة المرور، غيّرها فوراً حتى تتمكن من متابعة استخدام النظام.</div>
+    </div>
+    <figure class="shot"><img src="images/sis_2.jpg" alt="قائمة الاشعارات" loading="lazy"><figcaption>قائمة الاشعارات</figcaption></figure>
+  </article>
+
+  <article class="step" id="s3">
+    <div>
+      <span class="badge">3</span>
+      <h2>التعرف على القائمة الرئيسية</h2>
+      <ul>
+        <li>اضغط على أيقونة القائمة (☰) أعلى الصفحة لفتح القائمة الجانبية.</li>
+        <li>أهم الأقسام: الرئيسية، الاشعارات، خدمات التسجيل، المعلومات الأساسية، الجدول الدراسي، الخطة الدراسية، السجل الأكاديمي.</li>
+        <li>تجد أيضاً: الخدمات المالية، براءة الذمة، التقدم بطلبات، المكتبة، وعنوان الطالب.</li>
+        <li>الأقسام التي يظهر بجانبها سهم (‹) تحتوي على قوائم فرعية، اضغط عليها لتوسيعها.</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="images/sis_3.jpg" alt="القائمة الجانبية" loading="lazy"><figcaption>القائمة الجانبية</figcaption></figure>
+  </article>
+
+  <article class="step" id="s4">
+    <div>
+      <span class="badge">4</span>
+      <h2>خدمات التسجيل</h2>
+      <p>عند فتح «خدمات التسجيل» تظهر لك الخيارات التالية:</p>
+      <ul>
+        <li><b>تسجيل المواد:</b> لاختيار مواد الفصل.</li>
+        <li><b>استطلاع المواد المسجلة:</b> لمراجعة موادك وشعبها ومواعيدها.</li>
+        <li><b>إستطلاع العلامات:</b> لمعرفة علاماتك.</li>
+        <li><b>تقييم الأداء التدريسي:</b> لتقييم أعضاء هيئة التدريس.</li>
+        <li><b>استطلاع جدول الإمتحانات:</b> لمعرفة مواعيد امتحاناتك.</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="images/sis4.jpg" alt="قائمة خدمات التسجيل" loading="lazy"><figcaption>قائمة خدمات التسجيل</figcaption></figure>
+  </article>
+
+  <article class="step" id="s5">
+    <div>
+      <span class="badge">5</span>
+      <h2>الخطة الدراسية</h2>
+      <ul>
+        <li>من القائمة الجانبية اختر «الخطة الدراسية».</li>
+        <li><b>استطلاع الخطة:</b> لعرض خطتك ومتطلباتها.</li>
+        <li><b>إعادة بناء الخطة:</b> لتحديث خطتك بعد أي تغيير.</li>
+      </ul>
+    </div>
+    <figure class="shot"><img src="images/sis_5.jpg" alt="قائمة الخطة الدراسية" loading="lazy"><figcaption>قائمة الخطة الدراسية</figcaption></figure>
+  </article>
+
+  <article class="step" id="s6">
+    <div>
+      <span class="badge">6</span>
+      <h2>فهم ساعات الخطة</h2>
+      <p>تعرض الصفحة متطلبات الخطة مقسّمة إلى مجموعات، ولكل مجموعة عدد الساعات والحد الأقصى:</p>
+      <ul>
+        <li><b>جامعة إجبارية، قسم إجبارية، كلية إجبارية:</b> متطلبات يجب إنجازها كاملة.</li>
+        <li><b>جامعة اختيارية:</b> حزم مساقات (علمية وتكنولوجية، علوم اجتماعية واقتصادية، علوم إنسانية) تختار منها.</li>
+        <li><b>قسم اختيارية:</b> مواد اختيارية من تخصصك.</li>
+        <li><b>خارج الخطة:</b> مواد لا تُحسب ضمن خطتك.</li>
+      </ul>
+      <div class="tip">الرقم في المربع الصغير هو الساعات المنجزة في كل مجموعة، ويظهر تحته عدد الساعات والحد الأقصى.</div>
+    </div>
+    <figure class="shot"><img src="images/sis_6.jpg" alt="ساعات الخطة الدراسية" loading="lazy"><figcaption>ساعات الخطة الدراسية</figcaption></figure>
+  </article>
+
+  <article class="step landscape" id="s7">
+    <div>
+      <span class="badge">7</span>
+      <h2>استطلاع المواد المسجلة</h2>
+      <p>يعرض لك جدولاً بموادك الحالية يتضمن:</p>
+      <ul>
+        <li>رمز المساق واسمه (مثل BA 213 التحليل الكمي)، والشعبة، وعدد الساعات.</li>
+        <li>وقت المحاضرة (من – الى) وأيام الدوام.</li>
+        <li>«خارج الخطة» لمعرفة إن كانت المادة خارج خطتك.</li>
+        <li>أيقونتا القلم لتغيير الشعبة أو تبديل المساق (تعمل في فترات التسجيل والسحب والإضافة فقط).</li>
+      </ul>
+      <div class="tip">تصفّح الصفحة بوضع أفقي للهاتف لتظهر كل الأعمدة.</div>
+    </div>
+    <figure class="shot"><img src="images/sis_7.jpg" alt="جدول المواد المسجلة" loading="lazy"><figcaption>جدول المواد المسجلة</figcaption></figure>
+  </article>
+
+  <article class="step" id="s8">
+    <div>
+      <span class="badge">8</span>
+      <h2>حجز امتحان المستوى</h2>
+      <p>يمكنك حجز موعد امتحان المستوى من الموقع في حال:</p>
+      <ul>
+        <li>لم تتقدم لامتحان المستوى سابقاً.</li>
+        <li>لم تتجاوز فصولك الأولى من قبولك في الجامعة (بما فيها الفصل الصيفي).</li>
+      </ul>
+      <p>بعد اختيار الموعد المطلوب يجب الضغط على زر «حجز امتحان المستوى». وتظهر حجوزاتك السابقة في قسم «الحجوزات».</p>
+      <div class="tip">إذا ظهرت عبارة «لا يوجد موعد متاح حالياً» فلا توجد مواعيد مفتوحة الآن، راجع الصفحة لاحقاً.</div>
+    </div>
+    <figure class="shot"><img src="images/sis_8.jpg" alt="حجز امتحان المستوى" loading="lazy"><figcaption>صفحة حجز امتحان المستوى</figcaption></figure>
+  </article>
+</main>
+
+<footer>دليل تعريفي مبسّط لطلاب كلية الأعمال – للمعلومات الرسمية راجع النظام أو شؤون الطلبة.</footer>
+
+<div id="lb" role="dialog" aria-label="عرض الصورة"><img alt=""></div>
+
+<script>
+(function(){
+  var lb=document.getElementById('lb'), big=lb.querySelector('img');
+  document.querySelectorAll('.shot img').forEach(function(im){
+    im.addEventListener('click',function(){big.src=im.src;big.alt=im.alt;lb.classList.add('open');});
+  });
+  lb.addEventListener('click',function(){lb.classList.remove('open');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('open');});
+})();
+</script>
+</body>
+</html>
